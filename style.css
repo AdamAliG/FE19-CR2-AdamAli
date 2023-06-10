@@ -1,0 +1,50 @@
+
+
+.carousel-inner .carousel-indicators{
+  height:500px;
+}
+
+.carousel-item{
+  position: relative;
+  height:500px;
+}
+
+.planner{
+  background-color: black;
+  opacity: 0.6;
+  padding:40px;
+  color:white;
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+h2{
+  text-align: center;
+}
+
+.weeklysort{
+width:90%;
+}
+
+.weeklysort-left{
+  float: left;
+}
+
+.sort{
+  float:right;
+  
+}
+
+.button{
+  float:right;
+}
+
+.image{
+
+  width:90%;
+ 
+  
+}
+

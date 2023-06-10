@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title> CodeReview 2</title>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    
+    <!-- Image and text -->
+    <a class="navbar-brand" href="#">
+      <img src="./images/Logo---Navbar-planner.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      MyPlanner
+    </a>
+
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars text-light"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+        <li class="nav-item text-center mx-2 mx-lg-1">
+          <a class="nav-link active" aria-current="page" href="#!">
+            <div>
+              <i class="fas fa-home fa-lg mb-1"></i>
+            </div>
+            Home
+          </a>
+        </li>
+        <li class="nav-item text-center mx-2 mx-lg-1">
+          <a class="nav-link" aria-current="page" href="#!">
+            <div>
+              <i class="fas fa-home fa-lg mb-1"></i>
+            </div>
+            Tasks
+          </a>
+        </li>
+        
+        <li class="nav-item text-center mx-2 mx-lg-1">
+          <a class="nav-link" aria-current="page" href="#!">
+            <div>
+              <i class="fas fa-home fa-lg mb-1"></i>
+            </div>
+            Settings
+          </a>
+        </li>
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+        <li class="nav-item text-center mx-2 mx-lg-1">
+          <a class="nav-link" href="#!">
+            <div>
+              <i class="fas fa-bell fa-lg mb-1"></i>
+              <span class="badge rounded-pill badge-notification bg-info">11</span>
+            </div>
+            Messages
+          </a>
+        </li>
+        <li class="nav-item text-center mx-2 mx-lg-1">
+          <a class="nav-link" href="#!">
+            <div>
+              <i class="fas fa-globe-americas fa-lg mb-1"></i>
+              <span class="badge rounded-pill badge-notification bg-success">11</span>
+            </div>
+            News
+          </a>
+        </li>
+      </ul>
+  </div>
+</nav>
+<!-- Navbar end -->
+
+<main>
+<!-- Slideshow -->
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="planner">
+        <h2>Weekly planner</h2>
+      </div>
+      <img src="./images/minimal-office-slide-one.jpg" class="d-block w-100" alt="minimal.office-slide-one.jpg">
+      
+    </div>
+    <div class="carousel-item">
+      <img src="./images/minimal-office-slide-two.jpg" class="d-block w-100" alt="minimal-office-slide-two.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/office-slide-three.jpg" class="d-block w-100" alt="office-slide-three.jpg">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!--Slideshow end -->
+<div class="container-lg my-5">
+ 
+  
+  <div id="taskContainer" class="row g-0">
+    <div class="weeklysort d-flex justify-content-between flex-nowrap">
+      <h5 class="weeklysort-left">Weekly Tasks</h5>
+   
+      <span class="sort">Sort by priority: 
+          <div class="dropdown">
+  <button class=" m-2 btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    Sort Tasks
+  </button></span>
+  <ul class="dropdown-menu mb-3" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="#" id="sortAscending">Sort Ascending</a></li>
+    <li><a class="dropdown-item" href="#" id="sortDescending">Sort Descending</a></li>
+  </ul>
+  </div>
+ 
+</div>
+
+    <div class="col mb-4">
+      <div class="card shadow-lg border-2" style="width: 20rem;">
+        <div class="card-nav d-flex justify-content-between p-3">
+          <div class="text-white bg-primary rounded ps-2 pe-2">
+          <span>Task</span>
+          </div>
+          <div>
+            <!--Bookmark svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+              </path>
+            </svg>
+            <!--three dot menu svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="image d-flex m-auto p-2 border border-2 rounded">
+        <img class="card-img-top" src="" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"></h5>
+          <p class="card-text text-center"></p>
+          <hr>
+          <!--warning  svg-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+          <span class="priority">Priority level:</span>
+          <br>
+         
+          <div class="small-body">
+        </div>
+           <hr>
+           <div class="button d-flex ">
+            <!--Delete button svg-->
+          <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+            Delete</button>
+            <!--Done button svg-->
+          <button class="done btn btn-success d-flex align-items-center p-2">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card shadow-lg border-2" style="width: 20rem;">
+        <div class="card-nav d-flex justify-content-between p-3">
+          <div class="text-white bg-primary rounded ps-2 pe-2">
+          <span>Task</span>
+          </div>
+          <div>
+            <!--Bookmark svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+              </path>
+            </svg>
+            <!--three dot menu svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="image d-flex m-auto p-2 border border-2 rounded">
+        <img class="card-img-top" src="" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"></h5>
+          <p class="card-text text-center"></p>
+          <hr>
+          <!--warning  svg-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+          <span class="priority">Priority level:</span>
+          <br>
+         
+          <div class="small-body">
+        </div>
+           <hr>
+           <div class="button d-flex ">
+            <!--Delete button svg-->
+          <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+            Delete</button>
+            <!--Done button svg-->
+          <button class="done btn btn-success d-flex align-items-center p-2">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card shadow-lg border-2" style="width: 20rem;">
+        <div class="card-nav d-flex justify-content-between p-3">
+          <div class="text-white bg-primary rounded ps-2 pe-2">
+          <span>Task</span>
+          </div>
+          <div>
+            <!--Bookmark svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+              </path>
+            </svg>
+            <!--three dot menu svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="image d-flex m-auto p-2 border border-2 rounded">
+        <img class="card-img-top" src="" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"></h5>
+          <p class="card-text text-center"></p>
+          <hr>
+          <!--warning  svg-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+          <span class="priority">Priority level:</span>
+          <br>
+         
+          <div class="small-body">
+        </div>
+           <hr>
+           <div class="button d-flex ">
+            <!--Delete button svg-->
+          <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+            Delete</button>
+            <!--Done button svg-->
+          <button class="done btn btn-success d-flex align-items-center p-2">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mb-4">
+      <div class="card shadow-lg border-2" style="width: 20rem;">
+        <div class="card-nav d-flex justify-content-between p-3">
+          <div class="text-white bg-primary rounded ps-2 pe-2">
+          <span>Task</span>
+          </div>
+          <div>
+            <!--Bookmark svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+              </path>
+            </svg>
+            <!--three dot menu svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="image d-flex m-auto p-2 border border-2 rounded">
+        <img class="card-img-top" src="" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"></h5>
+          <p class="card-text text-center"></p>
+          <hr>
+          <!--warning  svg-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+          <span class="priority">Priority level:</span>
+          <br>
+         
+          <div class="small-body">
+        </div>
+           <hr>
+           <div class="button d-flex ">
+            <!--Delete button svg-->
+          <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+            Delete</button>
+            <!--Done button svg-->
+          <button class="done btn btn-success d-flex align-items-center p-2">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card shadow-lg border-2" style="width: 20rem;">
+        <div class="card-nav d-flex justify-content-between p-3">
+          <div class="text-white bg-primary rounded ps-2 pe-2">
+          <span>Task</span>
+          </div>
+          <div>
+            <!--Bookmark svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+              </path>
+            </svg>
+            <!--three dot menu svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="image d-flex m-auto p-2 border border-2 rounded">
+        <img class="card-img-top" src="" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"></h5>
+          <p class="card-text text-center"></p>
+          <hr>
+          <!--warning  svg-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+          <span class="priority">Priority level:</span>
+          <br>
+         
+          <div class="small-body">
+        </div>
+           <hr>
+           <div class="button d-flex ">
+            <!--Delete button svg-->
+          <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+            Delete</button>
+            <!--Done button svg-->
+          <button class="done btn btn-success d-flex align-items-center p-2">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card shadow-lg border-2" style="width: 20rem;">
+        <div class="card-nav d-flex justify-content-between p-3">
+          <div class="text-white bg-primary rounded ps-2 pe-2">
+          <span>Task</span>
+          </div>
+          <div>
+            <!--Bookmark svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+              </path>
+            </svg>
+            <!--three dot menu svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="image d-flex m-auto p-2 border border-2 rounded">
+        <img class="card-img-top" src="" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"></h5>
+          <p class="card-text text-center"></p>
+          <hr>
+          <!--warning  svg-->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+          <span class="priority">Priority level:</span>
+          <br>
+         
+          <div class="small-body">
+        </div>
+           <hr>
+           <div class="button d-flex ">
+            <!--Delete button svg-->
+          <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+            Delete</button>
+            <!--Done button svg-->
+          <button class="done btn btn-success d-flex align-items-center p-2">
+            <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <div class="row">
+      <div class="col mb-4">
+        <div class="card shadow-lg border-2" style="width: 20rem;">
+          <div class="card-nav d-flex justify-content-between p-3">
+            <div class="text-white bg-primary rounded ps-2 pe-2">
+            <span>Task</span>
+            </div>
+            <div>
+              <!--Bookmark svg-->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+                </path>
+              </svg>
+              <!--three dot menu svg-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="image d-flex m-auto p-2 border border-2 rounded">
+          <img class="card-img-top" src="" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+            <p class="card-text text-center"></p>
+            <hr>
+            <!--warning  svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+            <span class="priority">Priority level:</span>
+            <br>
+           
+            <div class="small-body">
+          </div>
+             <hr>
+             <div class="button d-flex ">
+              <!--Delete button svg-->
+            <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+              <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+              Delete</button>
+              <!--Done button svg-->
+            <button class="done btn btn-success d-flex align-items-center p-2">
+              <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card shadow-lg border-2" style="width: 20rem;">
+          <div class="card-nav d-flex justify-content-between p-3">
+            <div class="text-white bg-primary rounded ps-2 pe-2">
+            <span>Task</span>
+            </div>
+            <div>
+              <!--Bookmark svg-->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+                </path>
+              </svg>
+              <!--three dot menu svg-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="image d-flex m-auto p-2 border border-2 rounded">
+          <img class="card-img-top" src="" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+            <p class="card-text text-center"></p>
+            <hr>
+            <!--warning  svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+            <span class="priority">Priority level:</span>
+            <br>
+           
+            <div class="small-body">
+          </div>
+             <hr>
+             <div class="button d-flex ">
+              <!--Delete button svg-->
+            <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+              <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+              Delete</button>
+              <!--Done button svg-->
+            <button class="done btn btn-success d-flex align-items-center p-2">
+              <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card shadow-lg border-2" style="width: 20rem;">
+          <div class="card-nav d-flex justify-content-between p-3">
+            <div class="text-white bg-primary rounded ps-2 pe-2">
+            <span>Task</span>
+            </div>
+            <div>
+              <!--Bookmark svg-->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M5 3.75C5 2.784 5.784 2 6.75 2h10.5c.966 0 1.75.784 1.75 1.75v17.5a.75.75 0 0 1-1.218.586L12 17.21l-5.781 4.625A.75.75 0 0 1 5 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v15.94l5.031-4.026a.749.749 0 0 1 .938 0L17.5 19.69V3.75a.25.25 0 0 0-.25-.25Z">
+                </path>
+              </svg>
+              <!--three dot menu svg-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="image d-flex m-auto p-2 border border-2 rounded">
+          <img class="card-img-top" src="" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center"></h5>
+            <p class="card-text text-center"></p>
+            <hr>
+            <!--warning  svg-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575ZM8 5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 0 1.5 0v-2.5A.75.75 0 0 0 8 5Zm1 6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path></svg>
+            <span class="priority">Priority level:</span>
+            <br>
+           
+            <div class="small-body">
+          </div>
+             <hr>
+             <div class="button d-flex ">
+              <!--Delete button svg-->
+            <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+              <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
+              Delete</button>
+              <!--Done button svg-->
+            <button class="done btn btn-success d-flex align-items-center p-2">
+              <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path fill="#FFFFFF" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</main>
+
+<footer>
+  <div class="container-fluid my-5 p-0">
+
+    <footer class="text-center text-white bg-dark">
+      <div class="container py-5">     
+<!--Facebook icon-->
+
+<div class="icon-container d-flex justify-content-center">
+  <div action="./index.html" class="icons p-1">
+    <img src="./images/icons/facebook-icon.png" alt="facebook-icon.png">
+    <img src="./images/icons/github-icon.png" alt="github-icon.png">
+    <img src="./images/icons/google-icon.png" alt="google-icon.png">
+    <img src="./images/icons/instagram-icon.png" alt="instagram-icon.png">
+    <img src="./images/icons/linkedIn-icon.png" alt="linkedIn-icon.png">
+    <img src="./images/icons/twitter-icon.png" alt="twitter-icon.png">
+    </div>
+  </div>
+  <form class=" input-group d-flex justify-content-center p-3 gap-3">
+  <label class="text-white pe-1 align-self-center" for="email">Sign up for our Newsletter:</label>
+  <input class="w-25" type="text" name="email" id="email">
+  <input class="btn btn-outline-light rounded"type="submit" name="email" id="email">
+  </form>
+
+      <!-- Copyright -->
+      <div class=" p-3 bg-dark" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="">Adam Ali</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    
+  </div>
+  <!-- End of .container -->
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

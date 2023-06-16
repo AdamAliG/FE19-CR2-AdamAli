@@ -128,15 +128,7 @@
   </button>
 </div>
 <!--Slideshow end -->
-<div class="container-lg my-5">
- 
-  
-  <div id="taskContainer" class="row g-0">
-    <div class="weeklysort d-flex justify-content-between flex-nowrap">
-      <h5 class="weeklysort-left">Weekly Tasks</h5>
-   
-      <span class="sort">Sort by priority: 
-          <div class="dropdown">
+ <div class="dropdown">
   <button class=" m-2 btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
     Sort Tasks
   </button></span>
@@ -145,10 +137,19 @@
     <li><a class="dropdown-item" href="#" id="sortDescending">Sort Descending</a></li>
   </ul>
   </div>
+<div id="taskContainer" class="container-lg my-5">
+ 
+  
+  <div class="row g-0">
+    <div class="weeklysort d-flex justify-content-between flex-nowrap">
+      <h5 class="weeklysort-left">Weekly Tasks</h5>
+   
+      <span class="sort">Sort by priority: 
+         
  
 </div>
-
-    <div class="col mb-4">
+    
+    <div class="col mb-4 task-card">
       <div class="card shadow-lg border-2" style="width: 20rem;">
         <div class="card-nav d-flex justify-content-between p-3">
           <div class="text-white bg-primary rounded ps-2 pe-2">
@@ -169,7 +170,7 @@
         <div class="image d-flex m-auto p-2 border border-2 rounded">
         <img class="card-img-top" src="" alt="Card image cap">
         </div>
-        <div class="card-body">
+        <div id="cardBody" class="card-body">
           <h5 class="card-title text-center"></h5>
           <p class="card-text text-center"></p>
           <hr>
@@ -181,9 +182,9 @@
           <div class="small-body">
         </div>
            <hr>
-           <div class="button d-flex ">
+           <div class="button-body button d-flex">
             <!--Delete button svg-->
-          <button class="delete btn btn-danger d-flex align-items-center p-2 me-1">
+          <button id="delete"class="delete btn btn-danger d-flex align-items-center p-2 me-1">
             <svg class="me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#FFFFFF" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"></path></svg>
             Delete</button>
             <!--Done button svg-->
@@ -238,7 +239,7 @@
         </div>
       </div>
     </div>
-    <div class="col mb-4">
+    <div class="curd col mb-4">
       <div class="card shadow-lg border-2" style="width: 20rem;">
         <div class="card-nav d-flex justify-content-between p-3">
           <div class="text-white bg-primary rounded ps-2 pe-2">
@@ -285,7 +286,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col mb-4">
+    <div class="curd col mb-4">
       <div class="card shadow-lg border-2" style="width: 20rem;">
         <div class="card-nav d-flex justify-content-between p-3">
           <div class="text-white bg-primary rounded ps-2 pe-2">
@@ -330,7 +331,7 @@
         </div>
       </div>
     </div>
-    <div class="col mb-4">
+    <div class="curd col mb-4">
       <div class="card shadow-lg border-2" style="width: 20rem;">
         <div class="card-nav d-flex justify-content-between p-3">
           <div class="text-white bg-primary rounded ps-2 pe-2">
@@ -375,8 +376,8 @@
         </div>
       </div>
     </div>
-    <div class="col mb-4">
-      <div class="card shadow-lg border-2" style="width: 20rem;">
+    <div class="curd col mb-4">
+      <div class="card shadow-lg border-2" data-priority="3" style="width: 20rem;">
         <div class="card-nav d-flex justify-content-between p-3">
           <div class="text-white bg-primary rounded ps-2 pe-2">
           <span>Task</span>
@@ -467,7 +468,7 @@
           </div>
         </div>
       </div>
-      <div class="col mb-4">
+      <div class="curd col mb-4">
         <div class="card shadow-lg border-2" style="width: 20rem;">
           <div class="card-nav d-flex justify-content-between p-3">
             <div class="text-white bg-primary rounded ps-2 pe-2">
@@ -512,7 +513,7 @@
           </div>
         </div>
       </div>
-      <div class="col mb-4">
+      <div class="curd col mb-4">
         <div class="card shadow-lg border-2" style="width: 20rem;">
           <div class="card-nav d-flex justify-content-between p-3">
             <div class="text-white bg-primary rounded ps-2 pe-2">

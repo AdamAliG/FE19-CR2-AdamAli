@@ -7,7 +7,7 @@ let tasks = [
       location: "Austria",
       meeting: "2:00pm", 
       car:"Mustang",
-      importance: 3
+      importance: ""
   },
   { 
     taskName: "shopping", 
@@ -105,23 +105,24 @@ priority.forEach(cardBody => {
 
   // Create importance button
   let importanceButton = document.createElement('button');
-  importanceButton.className = 'btn btn-success mx-2 py-1';
-  importanceButton.innerText = '0';
+  importanceButton.className = 'importance btn btn-success mx-2 py-1';
+  importanceButton.innerText = 0;
 
   // Event listener for the importanceButton
   importanceButton.addEventListener('click', function() {
     let currentImportance = parseInt(importanceButton.innerText);
     if(currentImportance < 5) {
+        tasks.importance +=1;
         currentImportance += 1;
         importanceButton.innerText = currentImportance;
-
+        tasks.importance= currentImportance;
         // Change color based on importance
         if(currentImportance <= 1) {
-            importanceButton.className = 'btn btn-success mx-2 py-1';
+            importanceButton.className = 'importance btn btn-success mx-2 py-1';
         } else if(currentImportance <= 3) {
-            importanceButton.className = 'btn btn-warning mx-2 py-1';
+            importanceButton.className = 'importance btn btn-warning mx-2 py-1';
         } else {
-            importanceButton.className = 'btn btn-danger mx-2 py-1';
+            importanceButton.className = 'importance btn btn-danger mx-2 py-1';
         }
     }
   });
@@ -152,45 +153,64 @@ for(let i = 0; i < cards.length; i++) {
     "Location: " + task.location + "\n" +
     "Meeting: " + task.meeting + "\n" +
     "Car: " + task.car + "\n";
-    
-
-   // Create delete button
-  document.querySelectorAll('.delete').forEach(function(deleteButton) {
-    deleteButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        let cardBody = card.querySelector('.card-body');
-        // Reset the card body
-        cardBody.innerText = 'DELETED';
-        // Change card background color to red
-        card.classList.add('bg-danger', 'text-white', 'text-center');
-        let cardImage = card.querySelector('.card-img-top');
-        cardImage.src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg";
-        
-    });
-});
-document.querySelectorAll('.done').forEach(function(doneButton) {
-  doneButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      // Change card background color to green
-      card.classList.add('bg-success', 'text-white', 'text-center');
-      let smallBody = card.querySelector('.small-body');
-      smallBody.innerText = 'DONE';
-      let cardImage = card.querySelector('.card-img-top');
-      importanceButton.innerText = '0';
-        importanceButton.className = 'btn btn-success mx-2 py-1 importance';
-        cardImage.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXWGnvtiVaYV7poI89Rj6aJJImbpnZdToZcQ&usqp=CAU";
-  });
-});
  
+    let deleteButtons = document.querySelectorAll('.delete');
+    let doneButtons = document.querySelectorAll('.done');
+    for(let i = 0; i < deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener('click', function(e) {
+            let card = e.target.closest('.card');
+            
+            if (card) {
+                let cardBody = card.querySelector('.card-body');
+                let cardImage = card.querySelector('.card-img-top');
+    
+                if (cardBody && cardImage) {
+                    cardBody.innerText = 'DELETED';
+                    cardBody.classList.add('bg-danger', 'text-white', 'text-center');
+                    cardImage.src = "https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg";
+                }
+            }
+        });
+    }
+    for(let i = 0; i < doneButtons.length; i++) {
+      doneButtons[i].addEventListener('click', function(e) {
+          let card = e.target.closest('.card');
+          
+          if (card) {
+              let cardBody = card.querySelector('.card-body');
+              let cardImage = card.querySelector('.card-img-top');
+  
+              if (cardBody && cardImage) {
+                  cardBody.innerText = 'done';
+                  cardBody.classList.add('bg-success', 'text-white', 'text-center');
+                  cardImage.src = "https://png.pngtree.com/png-vector/20191113/ourmid/pngtree-green-check-mark-icon-flat-style-png-image_1986021.jpg";
+              }
+          }
+      });
+  }
 
 
-};
+
+
+  
+  }
 
 
 
+  
+
+  
+ document.getElementById('sortAscending').addEventListener('click', function() {
+  tasks.sort((a, b) => a.importance - b.importance); 
+  // 
+  updateTasksDisplay();
+});
 
 
-document.getElementById('sortAscending').addEventListener('click', () => sortCards(true));
-document.getElementById('sortDescending').addEventListener('click', () => sortCards(false));
+document.getElementById('sortDescending').addEventListener('click', function() {
+  tasks.sort((a, b) => b.importance - a.importance); 
+  
+  updateTasksDisplay();
+});
 
-
+  
